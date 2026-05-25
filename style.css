@@ -1,0 +1,964 @@
+/* ----------------- GLOBAL ----------------- */
+body{
+  font-family:"Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin:0;
+  line-height:1.6;
+  color:#222;
+  background:#f0f4f8;
+}
+a{color:inherit;text-decoration:none;}
+/* ----------------- COLORS ----------------- */
+:root{
+  --primary:#2c3e50;       /* dark slate */
+  --accent:#e67e22;        /* warm orange */
+  --secondary:#e5bc7d;     /* green */
+  --highlight:#e67e22;    /* orange (same as accent) */
+  --light:#fff;
+  --lang-bg:#ffebcc;
+  --timeline-bg:#e8f5e9;
+  --tool-bg:#f5e6d3;
+}
+/* ----------------- HEADER (sticky) - ENHANCED ----------------- */
+header{
+  position:sticky; top:0; z-index:1000;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:var(--light);
+  padding:0.8rem 1.5rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  gap:0.8rem;
+  box-shadow:0 4px 20px rgba(0,0,0,0.15);
+  backdrop-filter:blur(2px);
+}
+header .info{max-width:100%; overflow:hidden;}
+header h1{
+  margin:0;
+  font-size:1.8rem;
+  white-space:nowrap;
+  font-weight:600;
+  letter-spacing:-0.5px;
+  background:linear-gradient(135deg,#fff,#ffe0b3);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:none;
+}
+.header-nav{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  justify-content:center;
+}
+.nav-btn{
+  background:rgba(255,255,255,0.1);
+  border:none;
+  color:var(--light);
+  font-size:0.85rem;
+  font-weight:500;
+  cursor:pointer;
+  padding:0.5rem 1rem;
+  transition:all 0.3s ease;
+  border-radius:30px;
+  backdrop-filter:blur(4px);
+}
+.nav-btn:hover{
+  background:var(--highlight);
+  color:var(--light);
+  transform:translateY(-2px);
+  box-shadow:0 4px 12px rgba(230,126,34,0.3);
+}
+/* ----------------- QUOTE WITH IMAGE ----------------- */
+.quote-with-img{
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+  max-width:900px;
+  margin:2rem auto;
+}
+.quote-with-img .portrait{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid #fff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.15);
+}
+.quote-with-img blockquote{
+  margin:0;
+  font-style:italic;
+  color:#444;
+  position:relative;
+  font-size:1rem;
+}
+.quote-with-img blockquote::before,
+.quote-with-img blockquote::after{
+  font-size:3rem;
+  color:var(--highlight);
+  position:absolute;
+}
+.quote-with-img blockquote::before{
+  content:open-quote;
+  left:-0.8rem; top:-0.4rem;
+}
+.quote-with-img blockquote::after{
+  content:close-quote;
+  right:-0.5rem; bottom:-0.4rem;
+}
+.quote-with-img blockquote footer{
+  margin-top:0.5rem;
+  text-align:right;
+  font-weight:600;
+  color:#222;
+  font-size:0.9rem;
+}
+/* ----------------- SECTIONS ----------------- */
+section{
+  padding:2rem max(2rem,5%);
+  max-width:900px;
+  margin:auto;
+  scroll-margin-top:110px;
+}
+h2{
+  color:var(--primary);
+  margin-top:2rem;
+  font-size:1.8rem;
+  font-weight:600;
+  position:relative;
+  display:inline-block;
+  padding-bottom:0.5rem;
+}
+h2::after{
+  content:'';
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:60px;
+  height:3px;
+  background:linear-gradient(90deg,var(--accent),transparent);
+  border-radius:3px;
+}
+/* ----------------- LANGUAGES GRID - ENHANCED ----------------- */
+.lang-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:1.5rem;
+  margin-top:1rem;
+}
+.lang-card{
+  background:linear-gradient(135deg,#fff,#fef9f0);
+  border:1px solid rgba(230,126,34,0.2);
+  border-radius:16px;
+  padding:1.5rem;
+  text-align:center;
+  box-shadow:0 4px 15px rgba(0,0,0,0.08);
+  transition:all 0.3s ease;
+  cursor:default;
+  position:relative;
+  overflow:hidden;
+}
+.lang-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:-100%;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--secondary));
+  transition:left 0.4s ease;
+}
+.lang-card:hover::before{
+  left:0;
+}
+.lang-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 8px 25px rgba(230,126,34,0.15);
+  border-color:var(--accent);
+}
+.lang-card h3{
+  margin:0 0 0.5rem;
+  font-size:1.3rem;
+  color:var(--primary);
+  font-weight:700;
+}
+.lang-card .cert{
+  font-size:0.9rem;
+  color:var(--accent);
+  font-weight:600;
+  background:rgba(230,126,34,0.1);
+  display:inline-block;
+  padding:0.2rem 0.8rem;
+  border-radius:20px;
+}
+/* ----------------- TIMELINE ----------------- */
+.timeline{
+  display:flex;
+  flex-direction:column;
+  gap:1.5rem;
+  margin-top:1rem;
+}
+.timeline-item{
+  position:relative;
+  background:var(--timeline-bg);
+  border-left:6px solid var(--secondary);
+  border-radius:4px;
+  padding:1rem 1rem 1rem 80px;
+  margin-bottom:1.5rem;
+}
+.timeline-item::before{display:none;}
+.timeline-item .kit-logo{
+  position:absolute;
+  left:10px; top:1rem;
+  width:60px; height:auto;
+}
+.timeline-item h4{
+  margin:0;
+  color:var(--primary);
+  font-weight:600;
+}
+.timeline-item span{
+  font-size:.9rem;
+  color:#555;
+}
+.timeline-item p{margin:.4rem 0 0;}
+.timeline-item ul.thesis{
+  margin:.5rem 0 0 1.2rem;
+  padding-left:1rem;
+  list-style:disc;
+  font-size:.9rem;
+  color:#55555500;
+}
+/* ----------------- IMAGE GRID (projects) ----------------- */
+.image-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1.5rem;
+  margin-top:1rem;
+}
+.project-card{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:10px;
+  padding:1rem;
+  text-align:center;
+  box-shadow:0 2px 5px rgba(0,0,0,0.08);
+}
+.project-card img{
+  width:100%;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+.project-card h3{
+  margin:0 0 .4rem;
+  font-weight:600;
+  color:var(--primary);
+  font-size:1.05rem;
+}
+.github-link{
+  margin-top:0.6rem;
+  display:inline-block;
+}
+.github-link img{
+  width:24px;
+  height:24px;
+}
+/* ----------------- SKILLS SECTION - FLOATING BUBBLE/TAG DESIGN ----------------- */
+.skills-section{
+  padding:2rem 0;
+}
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.8rem;
+}
+.skill-card{
+  background:linear-gradient(135deg,#ffffff,#f8f9fa);
+  border:1px solid rgba(0,0,0,0.08);
+  border-radius:24px;
+  padding:1.5rem;
+  text-align:left;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  transition:all 0.35s cubic-bezier(0.2,0.9,0.4,1.1);
+  position:relative;
+  overflow:hidden;
+  cursor:default;
+}
+.skill-card::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:4px;
+  background:linear-gradient(90deg,var(--accent),var(--secondary),var(--accent));
+  opacity:0;
+  transition:opacity 0.3s ease;
+}
+.skill-card:hover::before{
+  opacity:1;
+}
+.skill-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+  border-color:rgba(230,126,34,0.2);
+}
+.skill-card h3{
+  margin:0 0 1.2rem;
+  font-size:1.2rem;
+  color:var(--primary);
+  font-weight:700;
+  display:inline-flex;
+  align-items:center;
+  gap:0.5rem;
+  padding-bottom:0.5rem;
+  border-bottom:2px solid var(--accent);
+}
+.skill-card h3::before{
+  content:'';
+  width:6px;
+  height:6px;
+  background:var(--accent);
+  border-radius:50%;
+  display:inline-block;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%,100%{opacity:0.4;transform:scale(0.8);}
+  50%{opacity:1;transform:scale(1.2);}
+}
+/* Floating tags/bubbles container */
+.skill-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:0.7rem;
+  margin-top:0.5rem;
+}
+/* Individual skill tag - like floating bubbles/pills */
+.skill-tag{
+  display:inline-block;
+  padding:0.45rem 1.1rem;
+  background:linear-gradient(135deg,#f0f2f5,#e9ecef);
+  color:#2c3e50;
+  font-size:0.85rem;
+  font-weight:500;
+  border-radius:40px;
+  transition:all 0.25s cubic-bezier(0.2,0.9,0.4,1.2);
+  cursor:default;
+  border:1px solid rgba(0,0,0,0.05);
+  box-shadow:0 1px 3px rgba(0,0,0,0.05);
+  letter-spacing:0.2px;
+  backdrop-filter:blur(2px);
+  position:relative;
+  overflow:hidden;
+}
+/* Hover effect - bubble lifts and changes color */
+.skill-tag:hover{
+  transform:translateY(-3px) scale(1.02);
+  background:linear-gradient(135deg,var(--accent),#f39c12);
+  color:white;
+  box-shadow:0 6px 14px rgba(230,126,34,0.25);
+  border-color:transparent;
+}
+/* Different colors for different categories - subtle variations */
+.skill-card:nth-child(1) .skill-tag:hover{background:linear-gradient(135deg,#3498db,#2980b9);}
+.skill-card:nth-child(2) .skill-tag:hover{background:linear-gradient(135deg,#9b59b6,#8e44ad);}
+.skill-card:nth-child(3) .skill-tag:hover{background:linear-gradient(135deg,#1abc9c,#16a085);}
+.skill-card:nth-child(4) .skill-tag:hover{background:linear-gradient(135deg,#e67e22,#d35400);}
+.skill-card:nth-child(5) .skill-tag:hover{background:linear-gradient(135deg,#2ecc71,#27ae60);}
+.skill-card:nth-child(6) .skill-tag:hover{background:linear-gradient(135deg,#e74c3c,#c0392b);}
+/* Optional: Add a subtle "bubble" animation on hover */
+.skill-tag::before{
+  content:'';
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:0;
+  height:0;
+  border-radius:50%;
+  background:rgba(255,255,255,0.3);
+  transform:translate(-50%,-50%);
+  transition:width 0.4s ease, height 0.4s ease;
+}
+.skill-tag:hover::before{
+  width:100%;
+  height:100%;
+}
+/* Responsive adjustments */
+@media (max-width: 768px){
+  .skill-tag{
+    padding:0.35rem 0.9rem;
+    font-size:0.8rem;
+  }
+  .skills-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* Optional: Add floating animation to random tags (subtle) */
+@keyframes float {
+  0%,100%{transform:translateY(0px);}
+  50%{transform:translateY(-3px);}
+}
+.skill-tag:nth-child(odd):hover{
+  animation:float 0.6s ease-in-out;
+}
+/* ----------------- KEY TAKEWAYS - ENHANCED ----------------- */
+#takeaways ul{
+  list-style:none;
+  padding-left:0;
+}
+#takeaways li{
+  padding:0.8rem 0 0.8rem 2rem;
+  position:relative;
+  background:linear-gradient(90deg,#fff,transparent);
+  margin-bottom:0.5rem;
+  border-radius:8px;
+  transition:all 0.3s ease;
+}
+#takeaways li::before{
+  content:'✓';
+  position:absolute;
+  left:0.5rem;
+  color:var(--accent);
+  font-weight:bold;
+  font-size:1.1rem;
+}
+#takeaways li:hover{
+  transform:translateX(5px);
+  background:linear-gradient(90deg,#fff5e8,transparent);
+}
+/* --------------------------------------------------------------
+   Base layout – image left, text right
+   -------------------------------------------------------------- */
+.company-card {
+  display: flex;                 /* horizontal flex container */
+  align-items: flex-start;       /* top‑align image and text */
+  gap: 1.5rem;                   /* space between figure & content */
+  margin: 2rem 0;                /* outer vertical spacing */
+}
+
+/* --------------------------------------------------------------
+   Figure (image container) – fixed width, keep aspect ratio
+   -------------------------------------------------------------- */
+/* Figure width – controls how much horizontal space the image gets */
+.company-card figure {
+  flex: 0 0 240px;        /* fixed width for the left column (adjust as needed) */
+  margin: 25px;
+}
+
+/* Image – fill *its own* figure, never exceed it */
+.company-card figure img {
+  width: 100%;            /* fill the figure’s width */
+  max-width: 100%;        /* safety net for any unexpected parent sizing */
+  height: auto;           /* keep aspect ratio */
+  display: block;
+  border-radius: 4px;
+}
+
+/* Caption styling */
+.company-card figcaption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------
+   Content – occupies remaining horizontal space
+   -------------------------------------------------------------- */
+.company-card .content {
+  flex: 1 1 auto;
+}
+
+/* Button inside the card – small top margin */
+.company-card .btn-primary {
+  margin-top: 0.8rem;
+}
+
+/* --------------------------------------------------------------
+   Responsive: stack vertically on narrow viewports
+   -------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .company-card {
+    flex-direction: column;      /* stack image above text */
+    align-items: center;
+    text-align: center;
+  }
+  .company-card figure {
+    flex: 0 0 auto;
+    width: 90%;                  /* shrink image a bit on mobile */
+    max-width: 300px;
+    margin-bottom: 1rem;
+  }
+  .company-card .content {
+    width: 100%;
+  }
+}
+
+    
+/* ----------------- CONTACT SECTION - ENHANCED ----------------- */
+#contact{
+  background:linear-gradient(135deg,var(--accent),#d35400);
+  color:#fff;
+  text-align:center;
+  padding:2rem 1rem;
+  position:relative;
+  overflow:hidden;
+}
+#contact::before{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-50%;
+  width:200%;
+  height:200%;
+  background:radial-gradient(circle,rgba(255,255,255,0.1) 0%,transparent 70%);
+  animation:contactGlow 15s infinite linear;
+}
+@keyframes contactGlow{
+  0%{transform:rotate(0deg);}
+  100%{transform:rotate(360deg);}
+}
+#contact h2{
+  color:#fff;
+  position:relative;
+  z-index:1;
+}
+#contact h2::after{
+  background:linear-gradient(90deg,#fff,transparent);
+}
+#contact p{
+  position:relative;
+  z-index:1;
+  font-size:1.1rem;
+}
+#contact a{
+  color:#fff;
+  text-decoration:underline;
+  transition:all 0.3s ease;
+  display:inline-flex;
+  align-items:center;
+  gap:0.3rem;
+}
+#contact a:hover{
+  color:#ffe0b3;
+  transform:translateY(-2px);
+}
+/* ----------------- FOOTER ----------------- */
+footer{
+  text-align:center;
+  padding:2rem;
+  background:#eaeaea;
+  color:#555;
+  font-size:0.9rem;
+}
+
+/* --------------------------------------------------------------
+.banner – occupies the whole line (100 % width)
+-------------------------------------------------------------- */
+.banner {
+  /* === base layout (exactly as provided) === */
+  display: block;
+  width: 100%;
+  background: linear-gradient(45deg,#f8f5ef,#e5bc7d) !important;               /* KIT‑blue inspired fresh mint */
+  color: #02182fb7 !important; 
+  padding: 0.05em 1em 0.05em 0em;    /* extra left padding for the arrow */
+  margin: 0.2em 0;
+  border-radius: 0 4px 4px 0;        /* round only the right side */
+  position: relative;
+  font-size: 0.9rem !important; 
+
+  /* === PROFESSIONAL ENHANCEMENTS (non-breaking, preserves alignment) === */
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  backdrop-filter: brightness(1.02) saturate(1.05);
+  transition: all 0.22s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  /* subtle inner glow for depth */
+  text-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  /* improve readability */
+  line-height: 1.45;
+  cursor: default;
+  border-left: none; /* ensure no extra conflict */
+  /* added micro gradient over background for a "premium" feel */
+  background-image: linear-gradient(115deg, rgba(255,255,245,0.2) 0%, rgba(255,255,245,0) 40%, rgba(0,0,0,0.02) 100%);
+}
+
+/* left‑pointing arrow (flipped triangle) — ORIGINAL GEOMETRY */
+.banner::before {
+  content: "";
+  position: absolute;
+  left: -1.6rem;                      /* pull the triangle outside the box */
+  top: 50%;
+  transform: translateY(-50%) rotate(180deg);
+  width: 0;
+  height: 0;
+  border-top: 0.4rem solid transparent;
+  border-bottom: 0.4rem solid transparent;
+  border-right: 0.8rem solid #e5bc7d; /* same colour as the banner */
+  /* PROFESSIONAL UPGRADE: subtle drop-shadow on triangle for crisp contrast */
+  filter: drop-shadow(-1px 0px 1px rgba(0, 0, 0, 0.08));
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+/* OPTIONAL: hover effect to add subtle interactivity – does NOT shift layout */
+.banner:hover {
+  background: #a8e5a7;                /* slightly richer mint (still color family) */
+  transform: translateX(2px);         /* micro shift only horizontal – no alignment break */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255,255,240,0.5);
+}
+
+.banner:hover::before {
+  border-right-color: #a8e5a7;        /* match hover background */
+  filter: drop-shadow(-1px 0px 2px rgba(0, 0, 0, 0.12));
+}
+
+/* add stylish inner content formatting (no alignment change) */
+.banner strong, .banner span {
+  font-weight: 600;
+  color: #1b3b1a;
+  background: rgba(255,255,210,0.4);
+  padding: 0.1rem 0.25rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  letter-spacing: -0.2px;
+}
+/* For DARK backgrounds */
+.banner-dark {
+    background: #1a2a4f;
+    color: #ffffff;  /* white works perfectly here */
+}
+
+/* preserve exact same spacing as original, but enhance text contrast */
+.banner-content {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+/* optional decorative bullet – keeps alignment intact, adds elegance */
+.banner .badge-pulse {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background-color: #206d1e;
+  border-radius: 50%;
+  margin-right: 0.35rem;
+  box-shadow: 0 0 0 0 rgba(32, 109, 30, 0.6);
+  animation: softPulse 1.4s infinite;
+}
+
+@keyframes softPulse {
+  0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(32, 109, 30, 0.5);}
+  70% { transform: scale(1.2); opacity: 1; box-shadow: 0 0 0 3px rgba(32, 109, 30, 0);}
+  100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 0 0 rgba(32, 109, 30, 0);}
+}
+
+/* right side "pro" accent — small pill that doesn't affect alignment (inline) */
+.pro-tag {
+  background: #f5f9f0;
+  color: #1f4f2d;
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 40px;
+  margin-left: 0.6rem;
+  letter-spacing: 0.2px;
+  box-shadow: inset 0 0 0 0.5px rgba(0,0,0,0.05), 0 1px 1px rgba(0,0,0,0.02);
+  backdrop-filter: blur(2px);
+}
+
+/* secondary style for alternate banners – keep alignment consistent */
+.banner-alt {
+  background: #3b8c6e;   /* deep professional teal as alternative, still arrow matches */
+}
+.banner-alt::before {
+  border-right-color: #3b8c6e;
+}
+.banner-alt:hover {
+  background: #2f7a5f;
+}
+.banner-alt:hover::before {
+  border-right-color: #2f7a5f;
+}
+
+.banner-accent {
+  background: #5d9b8b;
+}
+.banner-accent::before {
+  border-right-color: #5d9b8b;
+}
+
+/* extra professional layer: very subtle shine animation on banner (optional while hover) */
+.banner {
+  background-blend-mode: overlay;
+}
+
+/* optional refined typography and responsive spacing */
+@media (max-width: 520px) {
+  .demo-card {
+    padding: 1rem;
+  }
+  .banner {
+    font-size: 0.68rem;
+  }
+  .pro-tag {
+    font-size: 0.55rem;
+    padding: 0.1rem 0.45rem;
+  }
+}
+
+/* additional *exactly the same* alignment but add clarity */
+.banner .banner-text {
+  flex: 1;
+}
+
+/* caption to demonstrate original parameters unchanged */
+.note-original {
+  font-size: 0.7rem;
+  font-family: monospace;
+  background: rgba(0,0,0,0.05);
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+  margin-top: 1.4rem;
+  color: #2d4a3b;
+  backdrop-filter: blur(2px);
+}
+
+
+.banner-tools {
+display: block;                     /* fill the <li> width */
+width: 99%;
+background: #bab8ec;               /* KIT‑blue */
+color: #fff;
+padding: 0.05em 1em 0.05em 0em;      /* extra left padding for the arrow */
+margin: 0.2em 0;
+border-radius: 0 4px 4px 0;        /* round only the right side */
+position: relative;
+font-size: 1.0rem;
+}
+/* left‑pointing arrow (flipped triangle) */
+.banner-tools::before {
+content: "";
+position: absolute;
+left: -1.6rem;                      /* pull the triangle outside the box */
+top: 50%;
+transform: translateY(-50%) rotate(180deg);
+width: 0;
+height: 0;
+border-top: 0.4rem solid transparent;
+border-bottom: 0.4rem solid transparent;
+border-right: 0.8rem solid #bab8ec; /* same colour as the banner */
+}
+
+/* hide default list bullets */
+.thesis {
+list-style: none;
+padding-left: 0;
+}
+
+.project-tools {
+list-style: none;
+padding-left: 15px;
+}
+
+/* --------------------------------------------------------------
+Layout for the row of links (centered, a little spacing)
+-------------------------------------------------------------- */
+.link-row {
+margin-top: 0.6rem;
+display: flex;
+justify-content: center;   /* centre the two blocks */
+gap: 1.5rem;                /* space between Paper & Code */
+}
+
+/* --------------------------------------------------------------
+Individual link block (icon + label)
+-------------------------------------------------------------- */
+.link-item-ieee {
+display: flex;
+flex-direction: column;      /* vertical stack */
+align-items: center;           /* centre icon & text */
+text-decoration: none;         /* remove underline */
+color: inherit;               /* keep default text colour */
+}
+
+/* Icon size – adjust to taste */
+.link-item-ieee img {
+width: 86px;                  /* uniform icon size */
+height: auto;
+}
+
+.link-item-github {
+display: flex;
+flex-direction: column;      /* vertical stack */
+align-items: center;           /* centre icon & text */
+text-decoration: none;         /* remove underline */
+color: inherit;               /* keep default text colour */
+}
+
+/* Icon size – adjust to taste */
+.link-item-github img {
+width: 48px;                  /* uniform icon size */
+height: auto;
+}
+
+
+
+/* Label styling */
+.link-label {
+margin-top: 0.3rem;
+font-size: 0.85rem;
+font-weight: 600;
+color: #1e90ff;               /* same as the banner colour */
+}
+
+/* Hover effect – subtle lift */
+.link-item:hover img {
+transform: translateY(-2px);
+}
+.link-item:hover .link-label {
+color: #0a5dc2;
+}
+
+/* --------------------------------------------------------------
+Generic button look – you can reuse this for any link
+-------------------------------------------------------------- */
+.btn-primary {
+  /* original structure (exactly as provided) */
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #8b6224;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 4px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  
+  /* ========== PROFESSIONAL ENHANCEMENTS ========== */
+  /* smoother rounding (subtle upgrade but keeps original 4px as base) */
+  border-radius: 12px;          /* modern rounded look — more friendly, still professional */
+  /* original was 4px, but 12px is modern standard; feel free to keep 4px, but 12px looks "super cool". 
+     I'll keep both worlds: we can show a note, but for amazing design we elevate to 12px. 
+     If you prefer the original 4px, simply change. I choose elevated rounding.
+     To maintain consistency: we add a secondary variable */
+  
+  /* better spacing and alignment */
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  font-family: inherit;
+  line-height: 1.2;
+  
+  /* new: smooth shadow layer, depth */
+  box-shadow: 0 4px 8px rgba(0, 102, 204, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+  
+  /* subtle backdrop/glow effect */
+  backdrop-filter: blur(0px);
+  
+  /* border: optional micro edge for crispness */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  /* cursor pointer for interactive */
+  cursor: pointer;
+  
+  /* transition smoothness extended */
+  transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+  
+  /* position relative for ripple / pseudo effect (extra polish) */
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* elegant shine overlay (glassmorphism touch) */
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.5s ease;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* shine effect on hover */
+.btn-primary:hover::before {
+  left: 125%;
+}
+
+/* hover + focus state: enhanced original effect */
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e69c2d;        /* darker blue - original behavior */
+  transform: translateY(-3px);       /* more premium lift (original -2px -> -3px) */
+  box-shadow: 0 12px 20px -8px rgba(0, 102, 204, 0.45), 0 2px 4px rgba(0, 0, 0, 0.05);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* active pressed state */
+.btn-primary:active {
+  background-color: #003366;
+  transform: translateY(1px);        /* subtle push instead of 0, gives tactile feel */
+  box-shadow: 0 4px 8px rgba(0, 51, 102, 0.2);
+  transition-duration: 0.05s;
+}
+
+/* optional focus ring for accessibility (keeps professional look) */
+.btn-primary:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+  border-radius: 12px;
+}
+
+
+.btn-secondary {
+display: inline-block;               /* behave like a button */
+padding: 0.025rem 0.5rem;                /* size of the button */
+background-color: #8b6224;           /* KIT‑blue – change as you like */
+color: #fff;                         /* white text */
+text-decoration: none;              /* remove underline */
+font-weight: 600;
+border-radius: 4px;                  /* slightly rounded corners */
+transition: background-color 0.2s ease,
+            transform 0.1s ease;
+}
+
+/* hover / focus effect */
+.btn-secondary:hover,
+.btn-secondary:focus {
+background-color: #8b6224;           /* darker on hover */
+transform: translateY(-2px);         /* subtle lift */
+}
+
+/* optional: active (pressed) state */
+.btn-secondary:active {
+background-color: #003366;
+transform: translateY(0);
+}
+
+.lang-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background: white;
+  color: #2c3e50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: 0.2s;
+}
+
+.lang-btn:hover {
+  transform: scale(1.05);
+}

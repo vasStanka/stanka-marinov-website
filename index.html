@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stanka Marinov – Resume & Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ==================== HEADER ==================== -->
+  <header>
+    <div class="info">
+      <h1>Stanka Marinov</h1>
+        <div class="header-nav">
+          <!-- Navigation buttons with German data attributes for toggling -->
+          <button class="nav-btn" onclick="document.getElementById('about-me').scrollIntoView({behavior:'smooth'});" 
+            data-en="About Me"
+            data-de="Über mich">About Me</button>
+          <button class="nav-btn" onclick="document.getElementById('education').scrollIntoView({behavior:'smooth'});"
+            data-en="Education"
+            data-de="Ausbildung">Education</button>
+          <button class="nav-btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'});"
+            data-en="Project Highlights"
+            data-de="Projekt-Highlights">Project Highlights</button>
+          <button class="nav-btn" onclick="document.getElementById('company-projects').scrollIntoView({behavior:'smooth'});"
+            data-en="Industry and Research Projects"
+            data-de="Industrie- & Forschungprojekte">Industry and Research Projects</button>
+          <button class="nav-btn" onclick="document.getElementById('languages').scrollIntoView({behavior:'smooth'});"
+            data-en="Languages"
+            data-de="Sprachen">Languages</button>
+          <button class="nav-btn" onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'});"
+            data-en="Skills"
+            data-de="Kompetenzen">Skills</button>
+          <button class="nav-btn" onclick="document.getElementById('takeaways').scrollIntoView({behavior:'smooth'});"
+            data-en="Takeaways"
+            data-de="Fazit">Takeaways</button>
+          <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});"
+            data-en="Contact"
+            data-de="Kontakt">Contact</button>
+        </div>
+    </div>
+    <button id="langToggle" class="lang-btn">Deutsch</button>
+  </header>
+
+  <!-- ==================== QUOTE WITH IMAGE ==================== -->
+  <figure class="quote-with-img">
+    <img src="images/ME.jpg" alt="Stanka Marinov" class="portrait">
+    <blockquote>
+      <br>
+      <p 
+        class="lang-en"
+        data-en="I am passionate about turning state-of-the-art research into production-ready tools."
+        data-de="Es ist meine Leidenschaft, modernste Forschung in produktionsreife Werkzeuge zu verwandeln.">
+        I am passionate about turning state-of-the-art research into production-ready tools.
+      </p>
+      <p 
+        class="lang-de" 
+        style="display:none;"
+        data-en="I am passionate about turning state-of-the-art research into production-ready tools."
+        data-de="Es ist meine Leidenschaft, modernste Forschung in produktionsreife Werkzeuge zu verwandeln.">
+        Es ist meine Leidenschaft, modernste Forschung in produktionsreife Werkzeuge zu verwandeln.
+      </p>
+      <br><br>
+    </blockquote>
+  </figure>
+
+  <!-- ==================== ABOUT ME ==================== -->
+  <section id="about-me">
+    <h2>
+      <span class="lang-en">About Me</span>
+      <span class="lang-de" style="display:none;">Über mich</span>
+    </h2>
+
+    <p class="lang-en">
+      I am a <strong>Digital Innovator</strong> at TWT GmbH with professional experience in full‑stack 
+      software development and <strong>Machine Learning</strong> for the automotive industry. 
+      My academic background from KIT (B.Sc. &amp; M.Sc. Informatics, Visual Computing) 
+      provided a solid foundation in <strong>computer graphics</strong> and data‑driven methods. 
+      I am an <strong>expert in C++, Python, TypeScript, and CPU‑based rendering pipelines</strong>, 
+      and I thrive in <strong>cross‑functional agile teams</strong>, translating cutting‑edge research into reliable, production‑ready software. 
+      As a <strong>strong collaborator</strong> fluent in <strong>English, German and Bulgarian</strong>, 
+      I look forward to contributing my expertise to your team – let's discuss how I can add value.
+    </p>
+
+    <p class="lang-de" style="display:none;">
+      Als <strong>Digital Innovator</strong> bei der TWT GmbH bringe ich Berufserfahrung in der Full‑Stack Softwareentwicklung 
+      und im Bereich <strong>Maschinelles Lernen</strong> für die Automobilindustrie mit. 
+      Mein Studium am KIT (B.Sc. &amp; M.Sc. Informatik, Visual Computing) 
+      hat mir eine solide Grundlage in <strong>Computergrafik</strong> und datenbasierten Methoden gegeben. 
+      Mit <strong>C++, Python, TypeScript und CPU‑basierten Rendering Methoden</strong> habe ich umfangreich gearbeitet. 
+      In <strong>agilen, interdisziplinären Teams</strong> kann ich meine Stärken voll einbringen, insbesondere wenn es darum geht, 
+      innovative Forschung in zuverlässige, produktionsreife Software zu überführen. 
+      Als eine <strong>teamorientierte Person</strong> mit fließenden Sprachkenntnissen in <strong>Englisch, Deutsch und Bulgarisch</strong> 
+      freue ich mich darauf, meine Expertise in Ihr Team einzubringen – lassen wir darüber sprechen, wie ich Sie unterstützen kann.
+    </p>
+  </section>
+
+  <!-- ==================== EDUCATION TIMELINE ==================== -->
+  <section id="education">
+    <h2>
+      <span class="lang-en">Education</span>
+      <span class="lang-de" style="display:none;">Ausbildung</span>
+    </h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <img src="images/Logo_KIT.svg" alt="KIT Logo" class="kit-logo">
+        <h4>M.Sc. Informatik (Visual Computing)</h4>
+        <span class="lang-en">Apr 2020 – Oct 2022 – KIT</span>
+        <span class="lang-de" style="display:none;">Apr 2020 – Okt 2022 – KIT</span>
+
+        <p>
+          <span class="lang-en">Focus on specialization of <b>computer graphics</b> and <b>machine learning</b>.</span>
+          <span class="lang-de" style="display:none;">Spezialisierung auf <b>Computergrafik</b> und <b>maschinelles Lernen</b>.</span>
+        </p>
+        <ul class="thesis">
+          <li><span class="banner"><b>Thesis:</b> “Efficiency‑aware Bidirectional Path Tracing”.</span></li>
+          <li><span class="banner"><b>Certification:</b> Visual Computing</span></li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <img src="images/Logo_KIT.svg" alt="KIT Logo" class="kit-logo">
+        <h4>B.Sc. Informatik</h4>
+        <span class="lang-en">Oct 2015 – Apr 2020 – KIT</span>
+        <span class="lang-de" style="display:none;">Okt 2015 – Apr 2020 – KIT</span>
+
+        <p>
+          <span class="lang-en">Focus on fundamentals of various domains of computer science.</span>
+          <span class="lang-de" style="display:none;">Schwerpunkt auf den Grundlagen verschiedener Bereiche der Informatik.</span>
+        </p>
+        <ul class="thesis">
+          <li><span class="banner"><b>Thesis:</b> “Recovering Energy from Outlier Samples in Photorealistic Rendering”.</span></li>
+        </ul>
+      </div>
+      <div class="timeline-item">
+        <img src="images/eds_logo.png" alt="KIT Logo" class="kit-logo">
+        <h4>Abitur</h4>
+        <span>Sept 2010 – Apr 2015 – English Language School Plovdiv (Gymnasium)</span>
+      </div>
+    </div>
+  </section>
+
+<!-- ==================== PROJECT HIGHLIGHTS ==================== -->
+<section id="projects">
+  <h2>
+    <span class="lang-en">Project Highlights</span>
+    <span class="lang-de" style="display:none;">Projekt Highlights</span>
+  </h2>
+<div class="company-grid">
+
+  <!-- ── Pose2Drone ── -->
+  <div class="company-card">
+    <figure>
+      <img src="images/pose2drone_2.jpg" alt="Pose2Drone demo">
+      <figcaption></figcaption>
+    </figure>
+
+    <div class="content">
+      <h3>
+        <span class="lang-en">Pose2Drone – Human‑Drone Interaction</span>
+        <span class="lang-de" style="display:none;">Pose2Drone – Mensch‑Drohnen‑Interaktion</span>
+      </h3>
+      <p>
+        <span class="lang-en">A skeleton‑based Human‑Drone Interaction framework that lets users control a drone’s motion and maintain safe distance using simple arm gestures, complemented by a monocular distance‑estimation technique that avoids depth sensors. Accepted at IEEE EUSIPCO 2021.</span>
+        <span class="lang-de" style="display:none;">Ein skeletonbasiertes Framework für Mensch-Drohnen-Interaktion, das Benutzern erlaubt, die Bewegung einer Drohne mit einfachen Armbewegungen zu steuern und einen sicheren Abstand zu halten, ergänzt durch eine monokulare Entfernungsschätzung ohne Tiefensensoren. Veröffentlicht auf der IEEE EUSIPCO 2021.</span>
+      </p>
+
+      <!-- link container -->
+      <div class="link-row">
+        <!-- Paper -->
+        <a href="https://ieeexplore.ieee.org/document/9616116"
+           target="_blank"
+           class="link-item-ieee">
+          <img src="images/IEEE-Logo.jpg" alt="IEEE">
+          <span class="link-label">Paper</span>
+        </a>
+
+        <!-- Code -->
+        <a href="https://github.com/Zrrr1997/Pose2Drone"
+           target="_blank"
+           class="link-item-github">
+          <img src="images/github_icon.png" alt="GitHub">
+          <span class="link-label">Code</span>
+        </a>
+      </div>
+
+      <ul class="project-tools">
+        <li><span class="banner"><b>Tools:</b> PyTorch, TensorFlow, ROS middleware</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ── Lightweight Renderer ── -->
+  <div class="company-card">
+    <figure>
+      <img src="images/teapot_copper.png" alt="Lightweight Renderer">
+      <figcaption></figcaption>
+    </figure>
+
+    <div class="content">
+      <h3>
+        <span class="lang-en">Lightweight Renderer</span>
+        <span class="lang-de" style="display:none;">Effizienter Renderer</span>
+      </h3>
+      <p>
+        <span class="lang-en">A lightweight, CPU‑C++ ray tracer. It supports OBJ loading, BVH acceleration, and advanced path‑tracing features such as Multiple Importance Sampling, Next Event Estimation, and Practical Path Guiding. It runs on Linux and offers a real‑time ImGui interface for camera viewpoint, materials, lightning, and other rendering settings.</span>
+        <span class="lang-de" style="display:none;">Ein effizienter CPU C++-Raytracer. Er unterstützt OBJ-Import, BVH-Beschleunigung und erweiterte Path Tracing Funktionen wie Multiple Importance Sampling, Next Event Estimation und Practical Path Guiding. Läuft unter Linux und bietet eine Echtzeit ImGui Oberfläche für Kameraperspektive, Materialien, Beleuchtung und andere Rendering-Einstellungen.</span>
+      </p>
+
+      <!-- Code link only -->
+      <div class="link-row">
+        <a href="https://github.com/vasStanka/practical_lightweight_renderer/"
+           target="_blank"
+           class="link-item-github">
+          <img src="images/github_icon.png" alt="GitHub">
+          <span class="link-label">Code</span>
+        </a>
+      </div>
+
+      <ul class="project-tools">
+        <li><span class="banner"><b>Tools:</b> imgui, glfw, glm, tinyexr</span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</section>
+
+  <!-- ==================== COMPANY PROJECTS ==================== -->
+  <section id="company-projects" class="company-projects">
+    <h2>
+      <span class="lang-en">Industry and Research Projects</span>
+      <span class="lang-de" style="display:none;">Industrie- & Forschungprojekte</span>
+    </h2>
+    <div class="company-grid">
+      <div class="company-card">
+        <figure>
+          <img src="images/twt.png" alt="TWT projects collage">
+          <figcaption class="lang-en">Image © TWT GmbH</figcaption>
+          <figcaption class="lang-de" style="display:none;">Bild © TWT GmbH</figcaption>
+        </figure>
+        <div class="content">
+          <h4>
+            <span class="lang-en">TWT Projects in the Automotive Industry</span>
+            <span class="lang-de" style="display:none;">TWT Projekte in der Automobilindustrie</span>
+          </h4>
+          <p>
+            <span class="lang-en">Three industrial partner projects for the automotive sector. We delivered robust software engineering solutions and Python based automation for large data sets.</span>
+            <span class="lang-de" style="display:none;">Drei Industriepartnerprojekte für den Automobilsektor. Wir lieferten robuste Softwareentwicklungslösungen und Python-basierte Automatisierung für große Datensätze.</span>
+          </p>
+                  <a href="https://twt-innovation.de/en/"
+          target="_blank"
+          class="btn-primary">TWT GmbH</a>
+          <ul class="project-tools">
+            <li><span class="banner"><b> Tools:</b> TypeScript, Python (pandas), MongoDB, Git </span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <figure>
+          <img src="images/tronis.PNG" alt="Radar Simulation">
+          <figcaption class="lang-en">Image © TWT GmbH</figcaption>
+          <figcaption class="lang-de" style="display:none;">Bild © TWT GmbH</figcaption>        </figure>
+        <div class="content">
+          <h4>Radar Sensor Simulation (KoSi)</h4>
+          <p>
+            <span class="lang-en">Developed a radar sensor simulation in Unreal Engine 4 for the autonomous driving research project KoSi. It is integrated into the TWT product <a href="https://twt-innovation.de/en/produkte/#:~:text=TRONIS%C2%AE-,TRONIS,-%C2%AE%20is%20an%20environment" target="_blank" class="btn-secondary">Tronis</a>. Safety guarantees in urban driving were researched to help autonomous vehicles operate safely and reliably while interacting with traffic and pedestrians.</span>
+            <span class="lang-de" style="display:none;">Entwicklung einer Radarsensorsimulation in Unreal Engine 4 für das Forschungsprojekt KoSi zum autonomen Fahren. Integriert in das TWT-Produkt <a href="https://twt-innovation.de/en/produkte/#:~:text=TRONIS%C2%AE-,TRONIS,-%C2%AE%20is%20an%20environment" target="_blank" class="btn-secondary">Tronis</a>. Es wurden Sicherheitsgarantien im Stadtverkehr erforscht, um autonomen Fahrzeugen ein sicheres und zuverlässiges Zusammenspiel mit Verkehr und Fußgängern zu ermöglichen.</span>
+          </p>
+          <a href="https://www.ce.cit.tum.de/air/research/kosi/"
+          target="_blank"
+          class="btn-primary">KoSi</a>
+          <a href="https://twt-innovation.de/en/forschung/#:~:text=KoSi-,The%20acronym%20KoSi,-stands%20for%20Cooperative"
+          target="_blank"
+          class="btn-primary">TWT @ KoSi</a>
+          <ul class="project-tools">
+            <li><span class="banner"><b>Tools:</b> Unreal Engine 4, C++, RhodeCode</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <figure>
+          <img src="images/Karli.png" alt="Traffic Complexity">
+          <figcaption class="lang-en">Image © TWT GmbH</figcaption>
+          <figcaption class="lang-de" style="display:none;">Bild © TWT GmbH</figcaption>        </figure>
+        <div class="content">
+          <h4>
+            <span class="lang-en">Traffic Situation Complexity Estimation (KARLI)</span>
+            <span class="lang-de" style="display:none;">Komplexitätsbewertung von Verkehrssituationen (KARLI)</span>
+          </h4>
+          <p>
+            <span class="lang-en">Applied existing machine learning methods and trained new ones for traffic sign detection and recognition. Simulated autonomous vehicle pipeline and automatically evaluating the complexity of various traffic scenarios. Also developed a Tkinter-based GUI for visualization.</span>
+            <span class="lang-de" style="display:none;">Anwendung von Machine Learning Methoden und Training neuer Modelle zur Verkehrszeichenerkennung. Simulation einer autonomen Fahrzeugpipeline und automatische Bewertung der Komplexität verschiedener Verkehrsszenarien. Entwicklung einer Tkinter-basierten GUI zur Visualisierung.</span>
+          </p>
+          <a href="https://karli-projekt.de/"
+          target="_blank"
+          class="btn-primary">KARLI</a>
+          <a href="https://twt-innovation.de/en/forschung/#:~:text=KARLI-,KARLI,-stands%20for%20Artificial"
+          target="_blank"
+          class="btn-primary">TWT @ KARLI</a>
+          <ul class="project-tools">
+            <li><span class="banner"><b> Tools:</b> Python (pandas, pytorch, numpy, tkinter), 
+              Docker, eCAL, Git </span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="company-card">
+        <figure>
+          <img src="images/coupa.png" alt="Coupa Integration">
+          <figcaption class="lang-en">Image © Coupa GmbH</figcaption>
+          <figcaption class="lang-de" style="display:none;">Bild © Coupa GmbH</figcaption>
+        </figure>
+        <div class="content">
+          <h4>
+            <span class="lang-en">Coupa Project (tm5 Treasury)</span>
+            <span class="lang-de" style="display:none;">Coupa-Projekt (tm5 Treasury)</span>
+          </h4>
+          <p>
+            <span class="lang-en">Developed features for tm5 Treasury Management System (now Coupa Treasury).</span>
+            <span class="lang-de" style="display:none;">Entwicklung von Funktionen für das tm5 Treasury Management System (jetzt Coupa Treasury).</span>
+          </p>
+          <a href="https://www.coupa.com/products/treasury-cash-management/"
+          target="_blank"
+          class="btn-primary">Project Details</a>
+          <ul class="project-tools">
+            <li><span class="banner"><b> Tools:</b> TypeScript, React, Redux, 
+              C# / .NET Core, Jenkins, Jira, NoSQL, Git </span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== LANGUAGES ==================== -->
+  <section id="languages">
+    <h2>
+      <span class="lang-en">Languages</span>
+      <span class="lang-de" style="display:none;">Sprachen</span>
+    </h2>
+    <div class="lang-grid">
+      <div class="lang-card">
+        <h3>
+          <span class="lang-en">English</span>
+          <span class="lang-de" style="display:none;">Englisch</span>
+        </h3>
+        <p class="cert">Level: C1</p>
+      </div>
+      <div class="lang-card">
+        <h3>
+          <span class="lang-en">German</span>
+          <span class="lang-de" style="display:none;">Deutsch</span>
+        </h3>
+        <p class="cert">Level: C1</p>
+      </div>
+      <div class="lang-card">
+        <h3>
+          <span class="lang-en">Bulgarian</span>
+          <span class="lang-de" style="display:none;">Bulgarisch</span>
+        </h3>
+        <p class="cert">
+          <span class="lang-en">Native</span>
+          <span class="lang-de" style="display:none;">Muttersprache</span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+<!-- ==================== SKILLS - FLOATING BUBBLE TAGS ==================== -->
+  <section id="skills" class="skills-section">
+    <h2>
+      <span class="lang-en">Skills</span>
+      <span class="lang-de" style="display:none;">Kompetenzen</span>
+    </h2>
+    <div class="skills-grid">
+      <!-- Programming Languages Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Programming Languages</span>
+          <span class="lang-de" style="display:none;">Programmiersprachen</span>
+        </h3>
+          <div class="skill-tags">
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">Bash</span>
+        </div>
+      </div>
+
+      <!-- Tools & DevOps Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Tools & DevOps</span>
+          <span class="lang-de" style="display:none;">Tools & DevOps</span>
+        </h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Git/GitHub</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Conda</span>
+          <span class="skill-tag">venv</span>
+          <span class="skill-tag">poetry</span>
+          <span class="skill-tag">Jenkins CI/CD</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">eCAL</span>
+          <span class="skill-tag">ROS middleware</span>
+          <span class="skill-tag">Tensorboard</span>
+        </div>
+      </div>
+
+      <!-- Frameworks & Libraries Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Frameworks & Libraries</span>
+          <span class="lang-de" style="display:none;">Frameworks & Bibliotheken</span>
+        </h3>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Redux</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">PyTorch</span>
+          <span class="skill-tag">TensorFlow</span>
+          <span class="skill-tag">pandas</span>
+          <span class="skill-tag">numpy</span>
+          <span class="skill-tag">matplotlib</span>
+          <span class="skill-tag">scikit-learn</span>
+          <span class="skill-tag">Mitsuba</span>
+          <span class="skill-tag">Unreal Engine</span>
+          <span class="skill-tag">glm</span>
+          <span class="skill-tag">glfw</span>
+        </div>
+      </div>
+
+      <!-- Data & Machine Learning Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Know-How</span>
+          <span class="lang-de" style="display:none;">Fachwissen</span>
+        </h3>
+        <div class="skill-tags">
+          <span class="skill-tag">
+            <span class="lang-en">Data pipelines</span>
+            <span class="lang-de" style="display:none;">Datenpipelines</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Statistical Analysis</span>
+            <span class="lang-de" style="display:none;">Statistische Analyse</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Computer Vision</span>
+            <span class="lang-de" style="display:none;">Bildverarbeitung</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Photorealistic Rendering</span>
+            <span class="lang-de" style="display:none;">Fotorealistisches Rendering</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Data Science & Machine Learning</span>
+            <span class="lang-de" style="display:none;">Datenwissenschaft & Maschinelles Lernen</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Agile & Collaboration Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Agile & Collaboration</span>
+          <span class="lang-de" style="display:none;">Agile Methoden & Zusammenarbeit</span>
+        </h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Scrum</span>
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">
+            <span class="lang-en">Cross-functional Teams</span>
+            <span class="lang-de" style="display:none;">Interdisziplinäre Teams</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Technical Documentation</span>
+            <span class="lang-de" style="display:none;">Technische Dokumentation</span>
+          </span>
+          <span class="skill-tag">
+            <span class="lang-en">Presentations</span>
+            <span class="lang-de" style="display:none;">Präsentationen</span>
+          </span>
+        </div>
+      </div>
+
+      <!-- Code Editors Card -->
+      <div class="skill-card">
+        <h3>
+          <span class="lang-en">Code Editors</span>
+          <span class="lang-de" style="display:none;">Code-Editoren</span>
+        </h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Microsoft Visual Studio</span>
+          <span class="skill-tag">Jupyter Notebook</span>
+          <span class="skill-tag">VS Code</span>
+          <span class="skill-tag">WebStorm</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== KEY TAKEAWAYS ==================== -->
+  <section id="takeaways">
+    <h2>
+      <span class="lang-en">Key Takeaways</span>
+      <span class="lang-de" style="display:none;">Fazit</span>
+    </h2>
+    <ul>
+      <li><span class="lang-en">Strong software engineering skills: C, C++, Python, TypeScript, SQL.</span><span class="lang-de" style="display:none;">Starke Softwareentwicklungskompetenzen: C, C++, Python, TypeScript, SQL.</span></li>
+      <li><span class="lang-en">Expertise in machine learning and CPU‑based rendering.</span><span class="lang-de" style="display:none;">Expertise im maschinellen Lernen und CPU‑basiertem Rendering.</span></li>
+      <li><span class="lang-en">Proven ability to turn research concepts into production‑ready tools.</span><span class="lang-de" style="display:none;">Nachgewiesene Fähigkeit, Forschungskonzepte in produktionsreife Werkzeuge zu überführen.</span></li>
+      <li><span class="lang-en">Multilingual communication: English (C1), German (C1), Bulgarian (native).</span><span class="lang-de" style="display:none;">Mehrsprachige Kommunikation: Englisch (C1), Deutsch (C1), Bulgarisch (Muttersprache).</span></li>
+      <li><span class="lang-en">Published research on human‑drone interaction (EUSIPCO 2021).</span><span class="lang-de" style="display:none;">Veröffentlichte Forschung zur Mensch-Drohnen-Interaktion (EUSIPCO 2021).</span></li>
+    </ul>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section id="contact">
+    <h2 style="color:#fff;">
+      <span class="lang-en">Contact</span>
+      <span class="lang-de" style="display:none;">Kontakt</span>
+    </h2>
+    <p>
+      ✉️ <a href="mailto:vas.stanka@gmail.com">vas.stanka@gmail.com</a> |
+      <a href="https://www.linkedin.com/in/stanka-marinov-8b3b22216/?skipRedirect=true" target="_blank">
+        <img src="images/LinkedIn_logo.png"
+             alt="LinkedIn"
+             style="vertical-align:middle;width:15px;height:15px;margin-right:4px;">
+        LinkedIn
+      </a>
+    </p>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer>
+    <p>&copy; 2026 Stanka Marinov – All rights reserved.</p>
+  </footer>
+</body>
+
+
+<script>
+  function toggleLanguage() {
+    // Get all elements with lang-en and lang-de classes for paragraphs, headings, list items etc.
+    const englishElements = document.querySelectorAll('.lang-en');
+    const germanElements = document.querySelectorAll('.lang-de');
+    const toggleButton = document.getElementById('langToggle');
+    
+    // Also get all navigation buttons that have data attributes for bilingual text
+    const navButtons = document.querySelectorAll('.nav-btn');
+    
+    // Check current state (if English is visible)
+    const isEnglishVisible = englishElements[0]?.style.display !== 'none';
+    
+    if (isEnglishVisible) {
+      // Switch to German: hide all .lang-en, show all .lang-de
+      englishElements.forEach(el => el.style.display = 'none');
+      germanElements.forEach(el => el.style.display = '');
+      toggleButton.innerHTML = 'English';
+      
+      // Update navigation button texts to German
+      navButtons.forEach(btn => {
+        const germanText = btn.getAttribute('data-de');
+        if (germanText) btn.textContent = germanText;
+      });
+    } else {
+      // Switch to English: show all .lang-en, hide all .lang-de
+      englishElements.forEach(el => el.style.display = '');
+      germanElements.forEach(el => el.style.display = 'none');
+      toggleButton.innerHTML = 'Deutsch';
+      
+      // Update navigation button texts to English
+      navButtons.forEach(btn => {
+        const englishText = btn.getAttribute('data-en');
+        if (englishText) btn.textContent = englishText;
+      });
+    }
+  }
+
+  // Attach event listener after DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', () => {
+    const langToggle = document.getElementById('langToggle');
+    if (langToggle) {
+      langToggle.addEventListener('click', toggleLanguage);
+    }
+  });
+</script>
+</html>
